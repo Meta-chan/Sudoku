@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include <string.h>
 
 unsigned short int table[9][9];
 
@@ -107,7 +108,7 @@ bool unique_rule(unsigned short int *group)
 	}
 
 	return locchanged;
-}
+};
 
 bool line_rule(unsigned int line, bool except)
 {
@@ -130,7 +131,7 @@ bool line_rule(unsigned int line, bool except)
 		}
 	}
 	return locchange;
-}
+};
 
 bool column_rule(unsigned int column, bool except)
 {
@@ -153,7 +154,7 @@ bool column_rule(unsigned int column, bool except)
 		}
 	}
 	return locchange;
-}
+};
 
 bool sector_rule(unsigned int line, unsigned int column, bool except)
 {
@@ -183,7 +184,7 @@ bool sector_rule(unsigned int line, unsigned int column, bool except)
 	}
 
 	return locchange;
-}
+};
 
 bool line_column_sector_rule(bool except)
 {
@@ -205,11 +206,11 @@ bool line_column_sector_rule(bool except)
 	return locchanged;
 };
 
-unsigned int main()
+int main()
 {
 	init_table();
 	while (line_column_sector_rule(true) || line_column_sector_rule(false)) {}
 	print_table();
 	return 0;
-}
+};
 
